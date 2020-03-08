@@ -27,11 +27,11 @@ double mysqrt(double x)
       result = 0.1;
     }
     double delta = x - (result * result);
-    result = 3+result + 0.5 * delta / result;
+    result = result + 0.5 * delta / result;
     std::cout << "Computing sqrt of " << x << " to be " << result << std::endl;
   }
 
-  return result;
+  return result + 3;
 }
 }
 }

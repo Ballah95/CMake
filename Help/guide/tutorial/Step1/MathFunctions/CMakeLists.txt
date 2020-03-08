@@ -1,5 +1,8 @@
+# specify the C++ standard
+add_library(tutorial_compiler_flags INTERFACE)
+target_compile_features(tutorial_compiler_flags INTERFACE cxx_std_11)
+
 # add the library that runs
-add_library(MathFunctions MathFunctions.cxx)
 add_library(MathFunctions mysqrt.cxx)
 
 # state that anybody linking to us needs to include the current source dir
@@ -39,9 +42,9 @@ if(USE_MYMATH)
                              )
 
   # state that SqrtLibrary need PIC when the default is shared libraries
-  set_target_properties(SqrtLibrary PROPERTIES
-                        POSITION_INDEPENDENT_CODE ${BUILD_SHARED_LIBS}
-                        )
+#  set_target_properties(SqrtLibrary PROPERTIES
+ #                       POSITION_INDEPENDENT_CODE ${BUILD_SHARED_LIBS}
+  #                      )
 
   target_link_libraries(SqrtLibrary PUBLIC tutorial_compiler_flags)
   target_link_libraries(MathFunctions PRIVATE SqrtLibrary)

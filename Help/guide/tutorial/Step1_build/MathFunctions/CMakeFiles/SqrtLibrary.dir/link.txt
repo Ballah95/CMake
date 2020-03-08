@@ -1,0 +1,2 @@
+/cvmfs/sft.cern.ch/lcg/releases/binutils/2.30-e5b21/x86_64-centos7/bin/ar qc libSqrtLibrary.a  CMakeFiles/SqrtLibrary.dir/mysqrt.cxx.o
+/cvmfs/sft.cern.ch/lcg/releases/binutils/2.30-e5b21/x86_64-centos7/bin/ranlib libSqrtLibrary.a
